@@ -30,8 +30,7 @@ function getActivityLabel(action: string, oldVal: string | null, newVal: string 
   }
 }
 
-export function TaskDetailPanel({ task, labels, members, userId, onEdit, onDelete, onClose }: TaskDetailPanelProps) {
-  const { comments, activity, loading, addComment, deleteComment } = useTaskDetail(task.id, userId);
+export function TaskDetailPanel({ task, userId, onEdit, onDelete, onClose }: TaskDetailPanelProps) {  const { comments, activity, loading, addComment, deleteComment } = useTaskDetail(task.id, userId);
   const [commentText, setCommentText] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [activeTab, setActiveTab] = useState<Tab>('comments');

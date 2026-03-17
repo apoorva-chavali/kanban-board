@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useAuth } from './hooks/useAuth';
 import { useTasks } from './hooks/useTasks';
 import { useTeamMembers } from './hooks/useTeamMembers';
@@ -16,7 +16,7 @@ import './styles/globals.css';
 type Modal = 'none' | 'create' | 'edit' | 'team' | 'labels';
 
 export default function App() {
-  const { session, loading: authLoading, userId } = useAuth();
+  const { loading: authLoading, userId } = useAuth();
   const { tasks, loading: tasksLoading, error, createTask, updateTask, updateTaskStatus, deleteTask } = useTasks(userId);
   const { members, createMember, deleteMember } = useTeamMembers(userId);
   const { labels, createLabel, deleteLabel } = useLabels(userId);

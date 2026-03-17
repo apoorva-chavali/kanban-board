@@ -2,7 +2,6 @@ import { useState, useMemo } from 'react';
 import {
   DndContext,
   DragEndEvent,
-  DragOverEvent,
   DragStartEvent,
   PointerSensor,
   useSensor,
@@ -10,7 +9,6 @@ import {
   DragOverlay,
   closestCorners,
 } from '@dnd-kit/core';
-import { arrayMove } from '@dnd-kit/sortable';
 import { Task, TaskStatus, TaskPriority, Label, TeamMember, BOARD_COLUMNS } from '../../types';
 import { BoardColumn } from './BoardColumn';
 import { TaskCard } from '../Task/TaskCard';
@@ -31,8 +29,6 @@ interface BoardProps {
 
 export function Board({
   tasks,
-  labels,
-  members,
   searchQuery,
   priorityFilter,
   labelFilter,
@@ -103,18 +99,6 @@ export function Board({
     }
   };
 
-  const handleDragOver = (event: DragOverEvent) => {
-    // Optimistic UI - update local position for smooth DnD
-    const { active, over } = event;
-    if (!over) return;
-    const taskId = active.id as string;
-    const overId = over.id as string;
-
-    const targetColumn = BOARD_COLUMNS.find((c) => c.id === overId);
-    if (targetColumn) return; // handled in dragEnd
-
-    // Just let dnd-kit handle the visual position
-  };
 
   const isFiltering = searchQuery || priorityFilter !== 'all' || labelFilter !== 'all' || assigneeFilter !== 'all';
 
@@ -124,7 +108,6 @@ export function Board({
       collisionDetection={closestCorners}
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
-      onDragOver={handleDragOver}
     >
       <div className={styles.board}>
         {isFiltering && filteredTasks.length === 0 && (

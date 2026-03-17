@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Search, Users, Tag, Plus, LayoutGrid } from 'lucide-react';
 import { Task } from '../../types';
 import styles from './Header.module.css';
