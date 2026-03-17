@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { X, Plus, Trash2 } from 'lucide-react';
 import { TeamMember, LABEL_COLORS } from '../../types';
 import styles from './TeamModal.module.css';

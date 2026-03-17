@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { X, Calendar, Flag, User, Tag } from 'lucide-react';
 import { Task, TaskStatus, TaskPriority, Label, TeamMember, PRIORITY_CONFIG, BOARD_COLUMNS } from '../../types';
 import styles from './TaskModal.module.css';
