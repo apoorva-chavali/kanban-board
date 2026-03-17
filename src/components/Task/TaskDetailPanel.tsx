@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { X, Pencil, Trash2, Send, MessageSquare, Activity, Flag, Calendar } from 'lucide-react';
 import { Task, Label, TeamMember, PRIORITY_CONFIG, BOARD_COLUMNS } from '../../types';
 import { useTaskDetail } from '../../hooks/useTaskDetail';
