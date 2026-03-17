@@ -1,4 +1,4 @@
-# Flow — Kanban Task Board
+# Flow - Kanban Task Board
 
 A polished, fully-featured Kanban board built with React + TypeScript and Supabase.
 
@@ -8,16 +8,16 @@ A polished, fully-featured Kanban board built with React + TypeScript and Supaba
 - 4-column Kanban board: **To Do → In Progress → In Review → Done**
 - Drag-and-drop tasks between columns ([@dnd-kit](https://dndkit.com/))
 - Guest authentication via Supabase anonymous sign-in (no email required)
-- Full RLS — every user sees only their own data
+- Full RLS - every user sees only their own data
 
 ### Advanced
-- **Team Members & Assignees** — create teammates with custom colors, assign to tasks, see avatars on cards
-- **Task Comments** — comment thread per task with timestamps and delete
-- **Activity Log** — full history of status changes and comments per task
-- **Labels / Tags** — create custom colored labels, assign multiple per task
-- **Due Date Indicators** — visual urgency badges (overdue in red, due today in amber, upcoming in green)
-- **Search & Filtering** — real-time search by title, filter by priority / assignee / label
-- **Board Summary** — live stats in header (total tasks, completed, overdue)
+- **Team Members & Assignees** - create teammates with custom colors, assign to tasks, see avatars on cards
+- **Task Comments** - comment thread per task with timestamps and delete
+- **Activity Log**  full history of status changes and comments per task
+- **Labels / Tags** - create custom colored labels, assign multiple per task
+- **Due Date Indicators** - visual urgency badges (overdue in red, due today in amber, upcoming in green)
+- **Search & Filtering** - real-time search by title, filter by priority / assignee / label
+- **Board Summary** - live stats in header (total tasks, completed, overdue)
 
 ---
 
@@ -47,24 +47,11 @@ VITE_SUPABASE_URL=https://xxxxxxxxxxxx.supabase.co
 VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 ```
 
-> ⚠️ **Never commit `.env`** — it's in `.gitignore`
-
 ### 4. Start dev server
 ```bash
 npm run dev
 ```
 Visit [http://localhost:5173](http://localhost:5173)
-
----
-
-## Deployment (Vercel)
-
-1. Push to GitHub
-2. Import to [vercel.com](https://vercel.com)
-3. Add environment variables:
-   - `VITE_SUPABASE_URL`
-   - `VITE_SUPABASE_ANON_KEY`
-4. Deploy → done ✓
 
 ---
 
@@ -88,18 +75,18 @@ All tables have RLS enabled with `user_id = auth.uid()` policies.
 
 ## Tech Stack
 
-- **React 18** + **TypeScript** — UI
-- **Vite** — build tool
-- **@dnd-kit** — drag and drop
-- **Supabase** — database + anonymous auth + RLS
-- **date-fns** — date formatting
-- **lucide-react** — icons
-- **CSS Modules** — scoped styling (no CSS framework)
+- **React 18** + **TypeScript** - UI
+- **Vite** - build tool
+- **@dnd-kit** - drag and drop
+- **Supabase** - database + anonymous auth + RLS
+- **date-fns** - date formatting
+- **lucide-react** - icons
+- **CSS Modules** - scoped styling (no CSS framework)
 
 ---
 
 ## Security
 
-- Only the **anon public key** is used in the frontend — never the service role key
+- Only the **anon public key** is used in the frontend - never the service role key
 - RLS policies on every table ensure strict data isolation between users
-- `.env` is gitignored — never committed to source control
+- `.env` is gitignored - never committed to source control
