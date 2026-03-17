@@ -1,0 +1,154 @@
+.card {
+  position: relative;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  overflow: hidden;
+  display: flex;
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.priorityBar {
+  width: 3px;
+  flex-shrink: 0;
+  border-radius: 0;
+  opacity: 0.8;
+}
+
+.content {
+  padding: 12px 12px 10px;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.labelChip {
+  font-size: 10px;
+  font-weight: 500;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  letter-spacing: 0.2px;
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.description {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.avatars {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  color: #fff;
+  border: 1.5px solid var(--bg-elevated);
+  margin-left: -4px;
+  flex-shrink: 0;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.avatarMore {
+  background: var(--bg-active);
+  color: var(--text-secondary);
+  font-size: 8px;
+}
+
+.priorityIcon {
+  flex-shrink: 0;
+}
+
+.dueBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+}
+
+.dueBad {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.dueWarn {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.dueOk {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.commentCount {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  color: var(--text-tertiary);
+}
