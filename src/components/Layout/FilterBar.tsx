@@ -1,4 +1,3 @@
-import React from 'react';
 import { TaskPriority, Label, TeamMember } from '../../types';
 import styles from './FilterBar.module.css';
 
